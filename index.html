@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Losowy formularz</title>
+</head>
+<body>
+  <p>Przekierowywanie do ankiety...</p>
+  <p>Jeśli nic się nie dzieje, kliknij:
+    <a id="manualLink" href="#">przejdź do ankiety</a>
+  </p>
+
+  <script>
+    window.onload = function () {
+      // PODMIEŃ TE DWA LINKI NA SWOJE FORMULARZE:
+      var linkA = "https://wikipedia.com";  // Formularz A
+      var linkB = "https://google.com";  // Formularz B
+
+      // Losowanie 50/50
+      var r = Math.random();
+      var target = (r < 0.5) ? linkA : linkB;
+
+      // Link awaryjny + automatyczne przekierowanie
+      document.getElementById('manualLink').href = target;
+      window.location.href = target;
+    };
+  </script>
+</body>
+</html>
